@@ -1,0 +1,40 @@
+<html style="background:url(https://thumbs.dreamstime.com/b/abstract-math-number-background-vector-illustration-business-design-black-white-colors-random-sign-flying-border-frame-school-70830969.jpg)">
+    <head>
+        <link rel="stylesheet" href="style.css" />
+        <script src="app.js" type="text/javascript" charset="UTF-8"></script>
+    </head>
+    <body>
+        <div id="board">
+            <div id="skip"></div>
+            <div id="init">
+                <div class="knobs">
+                    <div>
+                        <input id="addition-knob" type="checkbox"/>Addition
+                    </div>
+                    <div>
+                        <input id="multiplication-knob" type="checkbox"/>Multiplication
+                    </div>
+                    <div>
+                        <input id="max-knob" type="number" name="max" placeholder="Max (default: 10)" />
+                    </div>
+                    <div>
+                        <input id="min-knob" type="number" name="min" placeholder="Min (default: 0)" />
+                    </div>
+                </div>
+                <button id="play">play</button>
+            </div>
+            <div id="challenge" class="hidden">
+                <button id="back-button">back</button>
+                <div class="equation">
+                    <span class="num1"></span> <span class="op"></span> <span class="num2"></span> = <span class="solution"></span>
+                </div>
+                <div id="options"></div>
+                <img id="applause" src="https://media.giphy.com/media/10xZU9b7JBx14s/200.gif">
+                <div id="hands">
+                    <div id="num1-hand" class="finger-5"></div>
+                    <div id="num2-hand" class="finger-5"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
