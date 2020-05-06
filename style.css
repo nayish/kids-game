@@ -207,12 +207,12 @@ button {
 
     #num1-hand {
         left: 100px;
-        top: -90px;
+        top: -180px;
     }
 
     #num2-hand {
         left: 100px;
-        bottom: -50px;
+        bottom: -180px;
         top: auto;
     }
 
