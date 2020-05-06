@@ -1,4 +1,10 @@
+button {
+    border: 1px solid rgb(186, 186, 186);
+    background: rgb(221, 221, 221);;
+}
+
 #board {
+    overflow: hidden;
     align-items: center;
     min-height: 500px;
     display: flex;
@@ -17,6 +23,7 @@
     margin-bottom: 60px;
     transition-property: font-size;
     transition-duration: 0.4s;
+    white-space: nowrap;
 }
 
 .equation * {
@@ -24,9 +31,29 @@
 }
 
 .knobs {
-    width: 500px;
+    width: 440px;
     text-align: left;
-    font-size: 20px;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.knobs input[type=checkbox] {
+    transform: scale(2);
+    margin: 10px;
+}
+
+.knobs input[type=number] {
+    font-size: 30px;
+    width: 150px;
+    text-align: right;
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(238, 238, 238);
+    border-radius: 2px;
+}
+
+.knobs label {
+    width: 100px;
+    display: inline-block;
 }
 
 .success .equation {
@@ -42,16 +69,16 @@
     font-size: 100px;
     width: 280px;
     height: 180px;
-    margin: 5px 10px;
+    margin: 10px;
 }
 .hidden, #board.hidden {
     display: none;
 }
 
 #play {
-    width: 500px;
+    width: 400px;
     padding: 40px;
-    font-size:200px;
+    font-size:100px;
 }
 
 .success #options {
@@ -69,7 +96,9 @@
 #back-button {
     position: absolute;
     top: 40px;
-    left: 40px;
+    right: 40px;
+    width:70px;
+    cursor: pointer;
 }
 
 #skip {
@@ -85,12 +114,12 @@
 #num1-hand, #num2-hand {
     width: 135px;
     height: 350px;
+    left: 30px;
     background-position: 130px;
     background-size: 650px;
     background-image: url(hands.png);
     background-repeat: no-repeat;
     position: absolute;
-
     top: 0;
     transform: rotate(90deg);
 }
@@ -105,21 +134,109 @@
 }
 
 #num1-hand.finger-2, #num2-hand.finger-2 {
-  background-position: -115px;
+  background-position: 20%;
 }
 
 #num1-hand.finger-3, #num2-hand.finger-3 {
-    background-position: -242px;
+    background-position: 45%;
 }
 
 #num1-hand.finger-4, #num2-hand.finger-4 {
-    background-position: -377px;
+    background-position: 72%;
 }
 
 #num1-hand.finger-5, #num2-hand.finger-5 {
-    background-position: -500px;
+    background-position: 98%;
 }
 
 .success #hands {
     display: none;
+}
+
+@media (min-device-width : 400px) and (max-device-width: 1000px) {
+    #board {
+        font-size: 80px;
+        min-height: 400px;
+    }
+
+    #options button {
+        font-size: 60px;
+        width: 120px;
+        height: 90px;
+    }
+
+    #options button.long {
+        font-size: 40px;
+    }
+
+    #num1-hand {
+        left: 0;
+        top: -90px;
+    }
+
+    #num2-hand {
+        left: 0;
+        top: 50px;
+    }
+
+    .success .equation {
+        font-size: 60px;
+    }
+
+    #applause{
+        width: 400px;
+    }
+
+    #play {
+        width: 300px;
+        padding: 20px;
+        font-size: 60px;
+    }
+}
+
+@media (max-device-width : 400px) {
+    #board {
+        font-size: 100px;
+    }
+
+    #num1-hand, #num2-hand {
+        width: 270px;
+        height: 700px;
+        background-size: 1300px;
+    }
+
+    #num1-hand {
+        left: 100px;
+        top: -90px;
+    }
+
+    #num2-hand {
+        left: 100px;
+        bottom: -50px;
+        top: auto;
+    }
+
+    .success .equation {
+        font-size: 80px;
+    }
+
+    .knobs {
+        font-size: 60px;
+        margin-bottom: 100px;
+    }
+
+    .knobs input[type=checkbox] {
+        transform: scale(6);
+        margin: 40px;
+    }
+
+    .knobs input[type=number] {
+        font-size: 70px;
+        width: 150px;
+    }
+
+    .knobs label {
+        width: 130px;
+        display: inline-block;
+    }
 }

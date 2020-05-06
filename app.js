@@ -2,9 +2,9 @@ const NUMBER_OF_OPTIONS = 4;
 const SLOW_SPEED = 1.8;
 const ADDITION_CHAR = '+';
 const MULTIPLICATION_CHAR = '×';
-let ops = [ADDITION_CHAR, MULTIPLICATION_CHAR];
-let maxNumber = 10;
-let minNumber = 0;
+let ops = [ADDITION_CHAR];
+let maxNumber = 5;
+let minNumber = 1;
 let currentAudio;
 let successAnimation;
 let hands = true;
@@ -51,8 +51,6 @@ window.onload = () => {
         }
         setKnobs();
     };
-    document.getElementById('challenge').className = "hidden";
-    document.getElementById('board').className = "";
 
     document.getElementById('play').onclick = async () => {
         document.getElementById('challenge').className = "";
@@ -64,6 +62,7 @@ window.onload = () => {
         document.getElementById('challenge').className = "hidden";
         document.getElementById('init').className = "";
     };
+    document.getElementById('init').className = "";
 };
 
 function setKnobs() {
@@ -76,8 +75,8 @@ function setKnobs() {
 function newEquation() {
     document.getElementById('board').className = "";
 
-    const num1 = Math.floor(Math.random() * (maxNumber - minNumber)) + minNumber;
-    const num2 = Math.floor(Math.random() * (maxNumber - minNumber)) + minNumber;
+    const num1 = Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
+    const num2 = Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
     const op = ops[Math.floor(Math.random() * ops.length)];
 
     const solution = (op === '+') ? num1 + num2 : num1 * num2;
@@ -124,7 +123,6 @@ function newEquation() {
 
 
     const showHands = (hands && (num1 <=5 && num1 >=1) && (num2 >= 1 && num2 <=5) && op === ADDITION_CHAR);
-    console.log(showHands)
     document.getElementById('hands').className = showHands ? '' : 'hidden';
     document.getElementById('num1-hand').className = `finger-${num1}`;
     document.getElementById('num2-hand').className = `finger-${num2}`;

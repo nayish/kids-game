@@ -6,7 +6,7 @@
     <body>
         <div id="board">
             <div id="skip"></div>
-            <div id="init">
+            <div id="init" class="hidden">
                 <div class="knobs">
                     <div>
                         <input id="addition-knob" type="checkbox"/>Addition
@@ -15,16 +15,16 @@
                         <input id="multiplication-knob" type="checkbox"/>Multiplication
                     </div>
                     <div>
-                        <input id="max-knob" type="number" name="max" placeholder="Max (default: 10)" />
+                        <label>From:</label><input id="min-knob" type="number" name="min" placeholder="Min (default: 0)" />
                     </div>
                     <div>
-                        <input id="min-knob" type="number" name="min" placeholder="Min (default: 0)" />
+                        <label>To:</label><input id="max-knob" type="number" name="max" placeholder="Max (default: 10)" />
                     </div>
                 </div>
                 <button id="play">play</button>
             </div>
             <div id="challenge" class="hidden">
-                <button id="back-button">back</button>
+                <img id="back-button" src="home.png" />
                 <div class="equation">
                     <span class="num1"></span> <span class="op"></span> <span class="num2"></span> = <span class="solution"></span>
                 </div>
